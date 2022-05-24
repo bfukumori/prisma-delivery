@@ -14,7 +14,7 @@ export class CreateClientUseCase {
           mode: "insensitive"
         }
       }
-    })
+    });
 
     if (clientExists) {
       throw new Error("Client already exists!");
@@ -28,8 +28,8 @@ export class CreateClientUseCase {
         username,
         password: hashPassword
       }
-    })
+    });
     
-    return client
+    return client;
   }
 }
