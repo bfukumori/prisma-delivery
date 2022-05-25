@@ -5,7 +5,7 @@ interface IPayload {
   sub: string;
 }
 
-export async function ensureAuthenticateClient(req: Request, res: Response, next: NextFunction) {
+export async function ensureAuthenticateDeliveryman(req: Request, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
@@ -19,7 +19,7 @@ export async function ensureAuthenticateClient(req: Request, res: Response, next
   try {
     const { sub } = verify(token, `${process.env.JWT_SECRET}`) as IPayload;
 
-    req.id_client = sub;
+    req.id_deliveryman = sub;
 
     return next();
 
