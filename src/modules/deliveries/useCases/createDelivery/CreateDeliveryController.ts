@@ -8,8 +8,8 @@ export class CreateDeliveryController {
     
     const createDeliveryUseCase = new CreateDeliveryUseCase();
 
-    const response = await createDeliveryUseCase.execute({ id_client, item_name });
+    const result = await createDeliveryUseCase.execute({ id_client, item_name });
 
-    return res.status(201).json(response);
+    return res.status(201).json(result);
   }
 }

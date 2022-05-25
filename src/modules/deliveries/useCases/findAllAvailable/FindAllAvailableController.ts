@@ -6,8 +6,8 @@ export class FindAllAvailableController {
   async handle(req: Request, res: Response) : Promise<Response> {
     const findAllAvailableUseCase = new FindAllAvailableUseCase();
 
-    const deliveries = await findAllAvailableUseCase.execute();
+    const result = await findAllAvailableUseCase.execute();
 
-    return res.json(deliveries);
+    return res.json(result);
   }
 }
